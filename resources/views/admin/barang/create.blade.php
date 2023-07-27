@@ -27,7 +27,7 @@
                                     <label for="id_merk">Id Merk</label>
                                     <select type="text" name="id_merk" class="form-control">
                                         @foreach ($merk as $item)
-                                        <option value="{{ $item->id }}">{{ $item->id_merk }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->id}}</option>
                                         @endforeach
                                     </select>
                                 </div>
@@ -35,18 +35,18 @@
                                     <label for="id_golongan">Id Golongan</label>
                                     <select type="text" name="id_golongan" class="form-control">
                                         @foreach ($golongan as $item)
-                                        <option value="{{ $item->id }}">{{ $item->id_golongan }}</option>
+                                        <option value="{{ $item->id }}">{{ $item->id }}</option>
                                         @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label for="name">Nama Barang</label>
-                                    <input type="text" name="name" class="form-control" id="name"
+                                <input type="text" name="nama_barang" class="form-control" id="name"
                                         placeholder="Enter Nama Barang">
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status Barang</label>
-                                    <textarea name="status" id="editor">
+                                    <textarea name="status_barang" id="editor">
                                     </textarea>
                                     <small id="newsHelp" class="form-text text-muted">Make sense.</small>
                                 </div>

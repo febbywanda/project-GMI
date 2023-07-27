@@ -9,7 +9,7 @@
 				</div>
 			</div>
 		</div>
-			
+
 		<div class="page-inner mt--5">
 			<div class="row">
 				<div class="col-md-12">
@@ -43,12 +43,12 @@
 									@forelse ($barang as $index => $row )
 									<tr>
 										<td>{{$index + $barang->firstItem()}}</td>
-                                        <td>{{$row->merk->id_merk}}</td>
-										<td>{{$row->golongan->id_golongan}}</td>
+                                        <td>{{$row->merk->id}}</td>
+										<td>{{$row->golongan->id}}</td>
 										<td>{{$row->nama_barang}}</td>
 										<td>{{$row->status_barang}}</td>
-                                        <td>{{ $row->slug }}
-											
+                                        <td>
+
 											<a href="{{ route('barang.edit', $row->id)}}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>
 											<form action="{{ route('barang.destroy', $row->id)}}" method="POST" class="d-inline">
 												@csrf

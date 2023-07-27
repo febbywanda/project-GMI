@@ -10,6 +10,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
+
 class BarangController extends Controller
 {
     /**
@@ -34,7 +35,10 @@ class BarangController extends Controller
     {
         $merk = Merk::all();
         $golongan = Golongan::all();
-        return view('admin.merk-index.golongan-index.barang-create', compact('merk'));
+        return view('admin.barang.create' , [
+            'merk' => $merk,
+            'golongan' => $golongan
+        ]);
     }
 
     /**
@@ -44,12 +48,27 @@ class BarangController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $this->validate(
-           [
-            
-           ]
+{
+        $request->validate([
+            'id_merk' => 'required',
+            'id_golongan' => 'required',
+            'nama_barang' => 'required',
+            'status_barang' => 'required',
+            'slug' => 'nullable',
+        ]);
+
+        $barang = new Barang;
+        $barang->id_merk = $request->id_merk;
+        $barang->id_golongan = $request->id_golongan;
+        $barang->nama_barang = $request->nama_barang;
+        $barang->status_barang = $request->status_barang;
+        $barang->slug = Str::slug($request->nama_barang, '-');
+        $barang->save();
+
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil ditambahkan');
     }
+
+
 
     /**
      * Display the specified resource.
