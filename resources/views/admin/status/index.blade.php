@@ -41,7 +41,7 @@
                                         @forelse ($status as $index => $row )
                                         <tr>
                                             <td>{{ $index + $status->firstItem() }}</td>
-                                                    <td>{{ $row->nama_status }}</td>
+                                                    <td>{!! $row->nama_status !!}</td>
                                                     <td>{{ $row->slug }}
                                                         
                                                 <a href="{{ route('status.edit', $row->id)}}"

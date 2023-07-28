@@ -45,7 +45,7 @@
                                             <td>{{ $index + $golongan->firstItem() }}</td>
                                                     <td>{{ $row->nama_golongan }}</td>
                                                     <td>{{ $row->kode_golongan }}</td>
-                                                    <td>{{ $row->status_golongan }}</td>
+                                                    <td>{!! $row->status_golongan !!}</td>
                                                     <td>{{ $row->slug }}
                                             
                                                 <a href="{{ route('golongan.edit', $row->id)}}"

@@ -15,7 +15,7 @@ class CreatePemeliharaanasetTable extends Migration
     {
         Schema::create('pemeliharaanaset', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_aset')->constrained("daftaraset")->onDelete('cascade');
+            $table->foreignId('id_daftaraset')->constrained("daftaraset")->onDelete('cascade');
             $table->string('hasil_pemeliharaan');
             $table->integer('biaya_pemeliharaan');
             $table->date('tgl_penjadwalan');

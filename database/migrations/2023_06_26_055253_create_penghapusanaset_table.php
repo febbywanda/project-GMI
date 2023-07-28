@@ -18,7 +18,7 @@ class CreatePenghapusanasetTable extends Migration
             $table->date('tgl_usulan');
             $table->string('ket_penghapusan');
             $table->integer('hasil_approval');
-            $table->dateTime('tgl_pemeliharaan');
+            $table->dateTime('tgl_pemeliharaan')->constrained("pemeliharaanaset")->onDelete('cascade');
             $table->date('tgl_approval');
             $table->string('status_usulan');
             $table->text('slug');

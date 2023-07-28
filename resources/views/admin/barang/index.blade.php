@@ -46,7 +46,7 @@
                                         <td>{{$row->merk->id}}</td>
 										<td>{{$row->golongan->id}}</td>
 										<td>{{$row->nama_barang}}</td>
-										<td>{{$row->status_barang}}</td>
+										<td>{!!$row->status_barang!!}</td>
                                         <td>
 
 											<a href="{{ route('barang.edit', $row->id)}}" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i></a>

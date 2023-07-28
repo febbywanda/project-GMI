@@ -21,6 +21,9 @@ use App\Http\Controllers\RuanganController;
 use App\Http\Controllers\MerkController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DaftarAsetController;
+use App\Http\Controllers\PemeliharaanAsetController;
+use App\Http\Controllers\PenghapusanAsetController;
 
 
 

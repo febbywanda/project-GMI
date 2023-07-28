@@ -89,7 +89,9 @@ class BarangController extends Controller
      */
     public function edit($id)
     {
-        //
+        $barang = Barang::find($id);
+
+        return view('admin.barang.edit', compact('barang'));
     }
 
     /**
@@ -101,7 +103,19 @@ class BarangController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $barang = Barang::find($id);
+
+        $barang->update([
+            'id_merk' => $request->id_merk,
+            'id_golongan' => $request->id_golongan,
+            'nama_barang' => $request->nama_barang,
+            'status_barang' => $request->status_barang,
+            'slug' => Str::slug($request->name),
+            
+        ]);
+
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil diubah');
+   
     }
 
     /**
@@ -110,8 +124,10 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Barang $barang)
     {
-        //
+        $barang->delete();
+        return redirect()->route('barang.index')->with('success', 'Barang berhasil dihapus');
+  
     }
 }
